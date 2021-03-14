@@ -78,12 +78,12 @@ impl FuncTranslator {
         environ: &mut FE,
     ) -> WasmResult<()> {
         let _tt = timing::wasm_translate_function();
-        info!(
-            "translate({} bytes, {}{})",
-            reader.bytes_remaining(),
-            func.name,
-            func.signature
-        );
+        //info!(
+        //    "translate({} bytes, {}{})",
+        //    reader.bytes_remaining(),
+        //    func.name,
+        //    func.signature
+        //);
         debug_assert_eq!(func.dfg.num_blocks(), 0, "Function must be empty");
         debug_assert_eq!(func.dfg.num_insts(), 0, "Function must be empty");
 
