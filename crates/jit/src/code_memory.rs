@@ -120,6 +120,7 @@ impl CodeMemory {
 
             if !m.is_empty() {
                 unsafe {
+                    #[allow(deprecated)]
                     region::protect(m.as_mut_ptr(), m.len(), region::Protection::ReadExecute)
                 }
                 .expect("unable to make memory readonly and executable");

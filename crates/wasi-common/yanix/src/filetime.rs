@@ -14,11 +14,13 @@ pub use super::sys::filetime::*;
 /// `seconds` and `nanoseconds` accessors for different
 /// pointer widths (32 and 64bit currently).
 pub(crate) trait FileTimeExt {
+    #[allow(deprecated)]
     fn seconds_(&self) -> Result<libc::time_t>;
     fn nanoseconds_(&self) -> libc::c_long;
 }
 
 impl FileTimeExt for filetime::FileTime {
+    #[allow(deprecated)]
     fn seconds_(&self) -> Result<libc::time_t> {
         use std::convert::TryInto;
         use std::io::Error;
